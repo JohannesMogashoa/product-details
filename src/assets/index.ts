@@ -1,0 +1,16 @@
+import productImage from "./product.jpg"
+import marchExpoImage from "./march-expo.png"
+import appleIcon from "./icons/apple-pay.svg"
+import clockIcon from "./icons/clock.png"
+import envelopeIcon from "./icons/envelope.png"
+import forwardIcon from "./icons/forward.png"
+import infoIcon from "./icons/info.png"
+import mastercardIcon from "./icons/mastercard.svg"
+import minusIcon from "./icons/minus.png"
+import okIcon from "./icons/ok.png"
+import plusIcon from "./icons/plus.png"
+import security_lockIcon from "./icons/security-lock.png"
+import star_filledIcon from "./icons/star-filled.png"
+import visaIcon from "./icons/visa.svg"
+
+export { productImage, marchExpoImage, appleIcon, clockIcon, envelopeIcon, forwardIcon, infoIcon, mastercardIcon, minusIcon, okIcon, plusIcon, security_lockIcon, star_filledIcon, visaIcon }
