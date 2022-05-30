@@ -3,24 +3,26 @@ import React from 'react';
 
 const Ratings = () => {
   return (
-    <div>
-      <span>
-        <img src={star_filledIcon} alt="" />
-      </span>
-      <span>
-        <img src={star_filledIcon} alt="" />
-      </span>
-      <span>
-        <img src={star_filledIcon} alt="" />
-      </span>
-      <span>
-        <img src={star_filledIcon} alt="" />
-      </span>
-      <span>
-        <img src={star_filledIcon} alt="" />
-      </span>
-      <span>5.0</span>
-      <span>7 Reviews</span>
+    <div className="ratings">
+      <div>
+        <span>
+          <img src={star_filledIcon} alt="" />
+        </span>
+        <span>
+          <img src={star_filledIcon} alt="" />
+        </span>
+        <span>
+          <img src={star_filledIcon} alt="" />
+        </span>
+        <span>
+          <img src={star_filledIcon} alt="" />
+        </span>
+        <span>
+          <img src={star_filledIcon} alt="" />
+        </span>
+        <span>5.0</span>
+        <span>7 Reviews</span>
+      </div>
       <span>19 buyers</span>
     </div>
   );

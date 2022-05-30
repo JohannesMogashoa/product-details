@@ -3,7 +3,7 @@ import React from 'react';
 
 const Payments = () => {
   return (
-    <div>
+    <div className="payments">
       Payments:
       <img src={visaIcon} alt="" />
       <img src={mastercardIcon} alt="" />

@@ -3,7 +3,7 @@ import React from 'react';
 
 const TradeAssurance = () => {
   return (
-    <div>
+    <div className="trade-assurance">
       <img src={security_lockIcon} alt="" />
       <span> Trade Assurance </span>
       <span>protects your Alibaba.com orders</span>

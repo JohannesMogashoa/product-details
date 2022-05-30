@@ -1,0 +1,151 @@
+// Basic utility classes
+.spacer {
+  height: 1rem;
+}
+
+.padding-x {
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 1rem;
+}
+
+.h-20 {
+  height: 20px;
+  display: inline-block;
+}
+
+.bg-gray {
+  background-color: var(--bg-gray);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-surface {
+  background-color: var(--surface-bg);
+}
+
+.bg-linear-gradient {
+  background-image: var(--gradient-pink);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-black {
+  color: var(--text);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.font-small {
+  font-size: 12pt;
+}
+
+.font-base {
+  font-size: 14pt;
+}
+
+.font-large {
+  font-size: 16pt;
+}
+
+.border {
+  border: 1px solid var(--border-color);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+.button-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.button-primary:hover {
+  background-color: var(--primary);
+  opacity: 0.8;
+  color: var(--white);
+}
+
+.button-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.button-outline:hover {
+  background-color: var(--primary);
+  opacity: 0.2;
+  color: var(--white);
+}
+
+.icon {
+  display: inline-block;
+  margin: 0 0.3rem;
+}
+
+// Basic layout classes
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}

@@ -3,10 +3,10 @@ import React from 'react';
 
 const MarchExpo = () => {
   return (
-    <div>
-      <img src={marchExpoImage} alt="" />
-      <span>&#1748; Free Shipping (up to $40)</span>
-      <span>
+    <div className="march-expo">
+      <img src={marchExpoImage} alt="" className="march-expo__image" />
+      <span className="march-expo__text">• Free shipping (up to $40)</span>
+      <span className="march-expo__arrow">
         <img src={forwardIcon} alt="" />
       </span>
     </div>

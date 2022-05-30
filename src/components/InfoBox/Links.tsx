@@ -2,7 +2,7 @@ import React from 'react';
 
 const Links = () => {
   return (
-    <div>
+    <div className="links">
       <span>Alibaba.com Logistics</span>
       <span>Inspection Solutions</span>
     </div>
