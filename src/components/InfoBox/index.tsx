@@ -1,5 +1,5 @@
+import { Product } from '../../product.type';
 import React from 'react';
-import { productImage } from '../../assets';
 import Badges from './Badges';
 import CountDown from './CountDown';
 import DescriptionBox from './DescriptionBox';
@@ -11,27 +11,27 @@ import Products from './Products';
 import Ratings from './Ratings';
 import TradeAssurance from './TradeAssurance';
 
-export const InfoBox = () => {
+export const InfoBox: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <div className="info-box">
       {/* Product Image */}
       <div className="image_wrapper">
-        <img src={productImage} alt="Product" className="image" />
+        <img src={product?.gallery[0].main} alt="Product" className="image" />
       </div>
       <div>
-        <Badges />
+        <Badges badges={product?.shipping?.props} />
         <div className="spacer"></div>
-        <DescriptionBox />
+        <DescriptionBox name={product?.name} tags={product?.tags} />
         <div className="spacer"></div>
-        <Ratings />
+        <Ratings reviews={product?.reviews} />
         <div className="spacer"></div>
         <PriceBox />
         <div className="spacer"></div>
         <MarchExpo />
         <div className="spacer"></div>
-        <CountDown />
+        <CountDown discount={product?.discount} />
         <div className="spacer"></div>
-        <Products />
+        <Products options={product?.options} />
         <div className="spacer"></div>
         <TradeAssurance />
         <div className="spacer"></div>

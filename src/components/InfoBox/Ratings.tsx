@@ -1,7 +1,7 @@
 import { star_filledIcon } from '../../assets';
 import React from 'react';
 
-const Ratings = () => {
+const Ratings = ({ reviews }) => {
   return (
     <div className="ratings">
       <div>
@@ -20,10 +20,10 @@ const Ratings = () => {
         <span>
           <img src={star_filledIcon} alt="" />
         </span>
-        <span>5.0</span>
-        <span>7 Reviews</span>
+        <span>{reviews?.rating}</span>
+        <span>{reviews?.count} Reviews</span>
       </div>
-      <span>19 buyers</span>
+      <span>{reviews?.total_buyers} buyers</span>
     </div>
   );
 };
