@@ -149,3 +149,28 @@
 .items-center {
   align-items: center;
 }
+
+
+.container {
+  width: 100%;
+  padding-right: var(--spacer-3);
+  padding-left: var(--spacer-3);
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 1560px;
+  }
+}

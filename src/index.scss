@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
 @import "./utilities.scss";
+@import "./responsive.scss";
 
 :root {
   --white: #ffffff;
@@ -14,6 +15,13 @@
   --padding-x: 3.33%;
   --padding-x-lg: 72px;
   --padding-y-lg: 48px;
+
+  --spacer-1: .25rem;
+  --spacer-2: .5rem;
+  --spacer-3: 1rem;
+  --spacer-4: 1.5rem;
+  --spacer-5: 2rem;
+  --spacer-6: 5rem;
 
   --font-small: 12px;
   --font-base: 14px;
@@ -30,19 +38,89 @@
   font-size: var(--font-small);
 }
 
-// Component classes
-.app {
+.row {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  flex-wrap: wrap;
+  margin-right: calc(var(--spacer-3) / -1);
+  margin-left: calc(var(--spacer-3) / -1);
+  margin-bottom: var(--spacer-3);
+}
 
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: var(--padding-y-lg) var(--padding-x-lg);
-    margin: 0 auto;
-    overflow: hidden;
-  }
+.row>* {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: var(--spacer-3);
+  padding-left: var(--spacer-3);
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.col-1 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/1));
+}
+
+.col-2 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/2));
+}
+
+.col-3 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/3));
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/4));
+}
+
+.col-5 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/5));
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/6));
+}
+
+.col-7 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/7));
+}
+
+.col-8 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/8));
+}
+
+.col-9 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/9));
+}
+
+.col-10 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/10));
+}
+
+.col-11 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/11));
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: calc((100%) / (12/12));
 }
 
 .info-box {
@@ -50,25 +128,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
-
-    div:last-child {
-      width: 526px;
-    }
-  }
 }
 
 .image {
-  width: 360px;
-  height: 360px;
-
-  @media screen and (min-width: 768px) {
-    width: 416px;
-    height: 416px;
-  }
+  width: 100%;
 }
 
 .badges {
@@ -108,10 +171,6 @@
     line-height: 24px;
     width: 336px;
     text-align: left;
-
-    @media screen and (min-width: 768px) {
-      width: 100%;
-    }
   }
 
   &__box {
@@ -122,12 +181,6 @@
     position: absolute;
     right: 3.33%;
     bottom: -5px;
-
-    @media screen and (min-width: 768px) {
-      float: right;
-      overflow: auto;
-      position: relative;
-    }
   }
 }
 
@@ -145,7 +198,6 @@
     span:last-child,
     span:nth-last-child(2) {
       margin-left: 0.5rem;
-      font-size: 12px;
     }
 
     span:last-child {
@@ -257,24 +309,11 @@
     font-size: var(--font-base);
   }
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-
-    &__options {
-      display: block;
-      width: 76px;
-    }
-  }
-
   .product {
     display: grid;
     grid-template-columns: 148px 56px 120px;
     align-items: center;
     height: 40px;
-
-    @media screen and (min-width: 768px) {
-      grid-template-columns: repeat(3, 150px);
-    }
 
     &__name,
     &__price {
@@ -360,18 +399,47 @@
   margin-right: 2rem;
 }
 
+.checkout_summary {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--spacer-5);
+  padding: var(--spacer-3);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+
+  &__option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacer-2);
+
+    span:first-child {
+      font-size: var(--font-base);
+      color: var(--gray);
+    }
+
+    span:last-child {
+      font-weight: bold;
+      font-size: var(--font-base);
+    }
+  }
+
+  &__total {
+    font-size: var(--font-large);
+    color: var(--primary);
+    font-weight: bold;
+    margin-top: var(--spacer-5);
+    text-align: right;
+  }
+}
+
 .add-to-box {
   border-radius: 8px;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.05);
-  max-width: 336px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
   height: max-content;
   padding: 7.74%;
-  margin: 0 auto;
-
-  @media screen and (min-width: 768px) {
-    padding: 24px;
-  }
+  margin: var(--spacer-5) auto;
 
   &__shipping_cost {
     display: flex;
@@ -435,7 +503,7 @@
 
   button {
     border-radius: 20px;
-    width: 284px;
+    width: 100%;
     height: 40px;
     font-size: var(--font-base);
     outline: none;

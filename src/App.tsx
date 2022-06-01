@@ -14,12 +14,15 @@ const App = () => {
 
   return (
     <ProductProvider>
-      <div className="app">
-        <InfoBox product={product} />
-        <div className="spacer"></div>
-        <div>
-          <CheckoutSummary />
-          <AddToBox shipping_info={product?.shipping} />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-8">
+            <InfoBox product={product} />
+          </div>
+          <div className="col-md-4">
+            <CheckoutSummary />
+            <AddToBox shipping_info={product?.shipping} />
+          </div>
         </div>
       </div>
     </ProductProvider>

@@ -15,6 +15,18 @@ const Products = ({ options }) => {
 
   const OptionComponent = (option: Option) => {
     const cartOption = cart.filter((opt) => opt.label === option.label)[0];
+    let val = cartOption?.qty || 0;
+    let oldVal = val;
+
+    const setVal = (amount: number) => (val = amount);
+
+    const handleBlur = () => {
+      if (val < 0 || typeof val != 'number') {
+        val = oldVal;
+      }
+      oldVal = val;
+      handleChange(option, val);
+    };
 
     return (
       <div className="product" key={option.label}>
@@ -34,8 +46,12 @@ const Products = ({ options }) => {
             <img src={minusIcon} alt="" />
           </button>
           <input
-            value={cartOption?.qty ?? 0}
-            onChange={(e) => handleChange(option, parseInt(e.target.value))}
+            value={val}
+            onChange={(e) => {
+              e.preventDefault();
+              setVal(parseInt(e.target.value));
+            }}
+            onBlur={() => handleBlur()}
           />
           <button className="enabled" onClick={() => increaseQty(option)}>
             <img src={plusIcon} alt="" />

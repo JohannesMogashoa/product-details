@@ -60,6 +60,8 @@ const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
         setCart([...cart]);
       }
     });
+
+    calculateSummary();
   };
 
   const calculateSummary = () => {

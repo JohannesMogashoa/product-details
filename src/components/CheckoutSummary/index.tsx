@@ -5,10 +5,10 @@ import { format_to_currency } from '../../helpers';
 const CheckoutSummary = () => {
   const { cart, summary } = React.useContext(ProductCtx);
   return (
-    <div>
+    <div className="checkout_summary">
       {cart.length ? (
         cart.map((option) => (
-          <div key={option.label}>
+          <div className="checkout_summary__option" key={option.label}>
             <span>
               {option.label} ({option.qty})
             </span>
@@ -18,7 +18,9 @@ const CheckoutSummary = () => {
       ) : (
         <>No Options</>
       )}
-      <div>Summary: {format_to_currency(summary) ?? format_to_currency(0)}</div>
+      <div className="checkout_summary__total">
+        Summary: {format_to_currency(summary) ?? format_to_currency(0)}
+      </div>
     </div>
   );
 };
