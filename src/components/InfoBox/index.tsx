@@ -25,7 +25,7 @@ export const InfoBox: React.FC<{ product: Product }> = ({ product }) => {
         <div className="spacer"></div>
         <Ratings reviews={product?.reviews} />
         <div className="spacer"></div>
-        <PriceBox />
+        <PriceBox options={product?.options} />
         <div className="spacer"></div>
         <MarchExpo />
         <div className="spacer"></div>

@@ -16,7 +16,7 @@ const CheckoutSummary = () => {
           </div>
         ))
       ) : (
-        <>No Options</>
+        <>Cart Empty</>
       )}
       <div className="checkout_summary__total">
         Summary: {format_to_currency(summary) ?? format_to_currency(0)}

@@ -1,5 +1,22 @@
 import { clockIcon } from '../../assets';
 import React from 'react';
+import Countdown from 'react-countdown';
+
+const Completed = () => <span>Sale has ended!</span>;
+
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a completed state
+    return <Completed />;
+  } else {
+    // Render a countdown
+    return (
+      <span>
+        {days}d:{hours}h:{minutes}m:{seconds}s
+      </span>
+    );
+  }
+};
 
 const CountDown = ({ discount }) => {
   return (
@@ -10,7 +27,7 @@ const CountDown = ({ discount }) => {
       <span className="countdown__timer">
         <img src={clockIcon} alt="" />{' '}
         <span className="text-italic">
-          {new Date(discount?.end_date).toLocaleString()}
+          <Countdown date={new Date(discount?.end_date)} renderer={renderer} />
         </span>
       </span>
     </div>

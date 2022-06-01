@@ -40,31 +40,36 @@ const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
     calculateSummary();
   };
 
-  const descreaseQty = (option) => {
-    cart.filter((opt) => {
-      if (opt.label === option.label) {
-        if (opt.qty > 0) {
-          opt.qty -= 1;
-          setCart([...cart]);
-        }
-      }
-    });
+  const descreaseQty = (option: Option) => {
+    const index = cart.findIndex((opt) => opt.label === option.label);
+    if (index > -1) {
+      cart[index].qty -= 1;
+      setCart([...cart]);
+    }
 
     calculateSummary();
   };
 
-  const handleChange = (option, amount) => {
-    cart.filter((opt) => {
-      if (opt.label === option.label) {
-        opt.qty = amount;
-        setCart([...cart]);
-      }
-    });
+  const handleChange = (option: Option, amount: number) => {
+    const index = cart.findIndex((opt) => opt.label === option.label);
+    if (index < 0) {
+      cart.push({ ...option, qty: amount });
+      setCart([...cart]);
+    } else {
+      cart[index].qty = amount;
+      setCart([...cart]);
+    }
 
     calculateSummary();
+  };
+
+  const cleanCart = () => {
+    const clean = cart.filter((opt) => opt.qty !== 0);
+    setCart(clean);
   };
 
   const calculateSummary = () => {
+    cleanCart();
     let runningSummary = 0;
 
     cart.map((option) => {
