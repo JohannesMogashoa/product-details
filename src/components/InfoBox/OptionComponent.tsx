@@ -1,4 +1,4 @@
-import { ProductCtx } from '../../context';
+import { ProductCtx } from '../../context/product-context';
 import React from 'react';
 import { minusIcon, plusIcon } from '../../assets';
 

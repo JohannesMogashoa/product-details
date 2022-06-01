@@ -1,4 +1,4 @@
-import { Product } from './product.type';
+import { Product } from '../types/product.type';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 

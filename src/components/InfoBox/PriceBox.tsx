@@ -1,6 +1,6 @@
-import { Price } from '../../product.type';
+import { Price } from '../../types/product.type';
 import React from 'react';
-import { format_to_currency } from '../../helpers';
+import { format_to_currency } from '../../utils/helpers';
 
 interface Option {
   label: string;

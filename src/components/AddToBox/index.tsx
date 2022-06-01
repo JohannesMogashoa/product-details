@@ -1,6 +1,6 @@
 import { envelopeIcon, infoIcon } from '../../assets';
 import React, { FunctionComponent } from 'react';
-import { ShippingInfo } from '../../product.type';
+import { ShippingInfo } from '../../types/product.type';
 import Tooltip from '../tooltip';
 
 export const AddToBox: FunctionComponent<{ shipping_info: ShippingInfo }> = ({

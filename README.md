@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+- [Running & Compiling](#running--compiling)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+    - [`npm run eject`](#npm-run-eject)
+- [Architecture](#architecture)
+- [Stack Choice](#stack-choice)
+  - [Reason](#reason)
+
+# Running & Compiling
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -10,7 +20,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
@@ -39,8 +48,55 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+# Architecture
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Being that React is an unopinionated framework, it does not provide a set guideline on how to structure and organise the project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+- /src
+    - /assets
+    - /components
+        - /AddToBox
+          - index.tsx
+        - /CheckoutSummary
+          - index.tsx
+        - /InfoBox
+            - Badges.tsx
+            - CountDown.tsx
+            - DescriptionBox.tsx
+            - index.tsx
+            - Links.tsx
+            - MarchExpo.tsx
+            - OptionComponent.tsx
+            - Payments.tsx
+            - PriceBox.tsx
+            - Productstsx
+            - Ratings.tsx
+            - TradeAssurance.tsx
+        - tooltip.tsx
+    - /context
+    - /hooks
+    - /types
+    - /utils
+    - /utils
+    - App.tsx
+    - index.tsx
+    - react-app-env.d.ts
+```
+
+I created components for the sections on the page in a way to group the UI and logic of sections. Given that this is a single page, I did not want to over engineer the solution.
+
+# Stack Choice
+
+In this project I opted for the following stack:
+
+    - React (Create-React-App)
+    - Typescript
+    - SASS/SCSS
+    - Axios
+
+## Reason
+
+Reason why I chose the particular combination of React + Typescript is the typesafety using Typescript brings into the project, it allows me to find bugs and error that if having used Javascript I might have caught only at runtime. This increases productivity and lessens the amount of debugging needed to be done. Reaason for going with SASS/SCSS is the ability to properly execute the BEM methodology but allowing for nesting of classes and elements from the same components which also increases productivity.
+
+If I had to do it again I wouldn't change anything as I used mostly built-in functionality that is shipped with React and only used 3<sup>rd</sup> party packages where I needed to make the logic simplier without having too many node_modules that will just bloat the project.

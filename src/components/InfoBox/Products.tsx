@@ -1,5 +1,5 @@
 import React from 'react';
-import { Price } from '../../product.type';
+import { Price } from '../../types/product.type';
 import OptionComponent from './OptionComponent';
 
 interface Option {

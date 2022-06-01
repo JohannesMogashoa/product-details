@@ -1,6 +1,6 @@
-import { ProductCtx } from '../../context';
+import { ProductCtx } from '../../context/product-context';
 import React from 'react';
-import { format_to_currency } from '../../helpers';
+import { format_to_currency } from '../../utils/helpers';
 
 const CheckoutSummary = () => {
   const { cart, summary } = React.useContext(ProductCtx);

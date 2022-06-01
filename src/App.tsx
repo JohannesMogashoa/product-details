@@ -1,8 +1,8 @@
 import React from 'react';
-import useFetch from './useFetch';
+import useFetch from './hooks/useFetch';
 import { AddToBox } from './components/AddToBox';
 import { InfoBox } from './components/InfoBox';
-import ProductProvider from './context';
+import ProductProvider from './context/product-context';
 import CheckoutSummary from './components/CheckoutSummary';
 
 const App = () => {

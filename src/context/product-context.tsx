@@ -1,4 +1,4 @@
-import { Price } from './product.type';
+import { Price } from '../types/product.type';
 import * as React from 'react';
 
 interface AppContextInferface {

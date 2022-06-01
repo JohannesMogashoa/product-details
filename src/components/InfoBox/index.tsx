@@ -1,4 +1,4 @@
-import { Product } from '../../product.type';
+import { Product } from '../../types/product.type';
 import React from 'react';
 import Badges from './Badges';
 import CountDown from './CountDown';
