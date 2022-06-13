@@ -14,12 +14,12 @@ const App = () => {
 
   return (
     <ProductProvider>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-12 col-md-8">
             <InfoBox product={product} />
           </div>
-          <div className="col-md-4">
+          <div className="col-12 col-md-4 mt-3">
             <CheckoutSummary />
             <AddToBox shipping_info={product?.shipping} />
           </div>

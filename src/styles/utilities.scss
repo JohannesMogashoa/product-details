@@ -174,3 +174,24 @@
     width: 1560px;
   }
 }
+
+.container-fluid {
+  width: 100%;
+  padding-right: var(--spacer-3);
+  padding-left: var(--spacer-3);
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 1500px) {
+    width: 100%;
+    max-width: 2000px;
+  }
+}
+
+.mt-3 {
+  margin-top: 12px;
+
+  @media (min-width: 992px) {
+    margin-top: 40px;
+  }
+}

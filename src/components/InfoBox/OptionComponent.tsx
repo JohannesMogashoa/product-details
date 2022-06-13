@@ -5,6 +5,7 @@ import { minusIcon, plusIcon } from '../../assets';
 const OptionComponent = ({ option }) => {
   const { cart, descreaseQty, increaseQty, handleChange } =
     React.useContext(ProductCtx);
+
   const cartOption = cart.filter((opt) => opt.label === option.label)[0];
   const [editingQty, setEditingQty] = React.useState(cartOption?.qty ?? 0);
 
@@ -39,12 +40,7 @@ const OptionComponent = ({ option }) => {
         >
           <img src={minusIcon} alt="" />
         </button>
-        <input
-          type={'number'}
-          value={editingQty}
-          onChange={handleUpdateQuantity}
-          onBlur={handleBlur}
-        />
+        <span>{cartOption?.qty ?? 0}</span>
         <button className="enabled" onClick={() => increaseQty(option)}>
           <img src={plusIcon} alt="" />
         </button>

@@ -13,12 +13,12 @@ import TradeAssurance from './TradeAssurance';
 
 export const InfoBox: React.FC<{ product: Product }> = ({ product }) => {
   return (
-    <div className="info-box">
+    <div className="row mt-3">
       {/* Product Image */}
-      <div className="image_wrapper">
+      <div className="image_wrapper col-md-6 col-xl-4">
         <img src={product?.gallery[0].main} alt="Product" className="image" />
       </div>
-      <div>
+      <div className="col-md-6 col-xl-8">
         <Badges badges={product?.shipping?.props} />
         <div className="spacer"></div>
         <DescriptionBox name={product?.name} tags={product?.tags} />

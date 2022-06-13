@@ -22,8 +22,12 @@ const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [cart, setCart] = React.useState<Option[]>([]);
-  const [summary, setSummary] = React.useState<number>(0);
+  const [summary, setSummary] = React.useState<number>(0.0);
 
+  /**
+   * Increases the quantity of the product in the cart & add to cart if not present
+   * @param product Product object passed through
+   */
   const increaseQty = (option) => {
     if (!cart.find((opt) => opt.label === option.label)) {
       cart.push({ ...option, qty: 1 });
@@ -40,10 +44,17 @@ const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
     calculateSummary();
   };
 
+  /**
+   * Descreases the quantity of the product in the cart & if product quantity is zero, remove from cart.
+   * @param product Product object passed through
+   */
   const descreaseQty = (option: Option) => {
     const index = cart.findIndex((opt) => opt.label === option.label);
     if (index > -1) {
       cart[index].qty -= 1;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
       setCart([...cart]);
     }
 
@@ -51,15 +62,6 @@ const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const handleChange = (option: Option, amount: number) => {
-    const index = cart.findIndex((opt) => opt.label === option.label);
-    if (index < 0) {
-      cart.push({ ...option, qty: amount });
-      setCart([...cart]);
-    } else {
-      cart[index].qty = amount;
-      setCart([...cart]);
-    }
-
     calculateSummary();
   };
 
